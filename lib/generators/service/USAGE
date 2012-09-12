@@ -1,0 +1,9 @@
+Description:
+    Create files for a simple service    
+
+Example:
+    rails generate service Thing
+
+    This will create:
+        app/services/thing.rb
+        spec/services/thing_spec.rb

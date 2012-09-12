@@ -1,4 +1,5 @@
 PunchId::Application.routes.draw do
+  resources :user_activities, only: [:index, :show, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: "sessions#new"
