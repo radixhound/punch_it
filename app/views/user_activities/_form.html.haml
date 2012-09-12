@@ -1,3 +1,3 @@
--# form_for @update_status do |f|
-  = #f.text_field :status_line
-  = #f.submit "update"
+= form_for @status_update, url: status_path(current_user) do |f|
+  = f.text_field :status
+  = f.submit "update"

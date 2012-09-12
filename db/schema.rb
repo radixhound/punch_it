@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120912185207) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
-    t.boolean  "in"
+    t.boolean  "is_in"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

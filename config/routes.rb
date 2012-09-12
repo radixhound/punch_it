@@ -1,7 +1,7 @@
 PunchId::Application.routes.draw do
   resources :user_activities, only: [:index, :show, :create]
   resources :sessions, only: [:new, :create, :destroy]
-
+  resources :status, only: [:create]
   root to: "sessions#new"
 
   # The priority is based upon order of creation:

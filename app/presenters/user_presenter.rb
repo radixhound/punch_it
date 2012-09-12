@@ -14,7 +14,7 @@ class UserPresenter
 
   def current_status
     return "NA" unless @user.latest_activity
-    @user.latest_activity.in ? "IN" : "OUT"
+    @user.latest_activity.is_in ? "IN" : "OUT"
   end
 
   def status_description
