@@ -8,6 +8,7 @@
   %body
     - if current_user
       #login_header
+        = current_user.username
         = link_to "logout", logout_path
     #container
       #header

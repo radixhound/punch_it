@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
    conditions: ["created_at >= ?", Time.now.beginning_of_day]
 
   attr_accessible :username, :email, :password, :password_confirmation
+  validates_confirmation_of :password
 
+  validates_uniqueness_of :username, :email 
 end

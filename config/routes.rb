@@ -1,7 +1,9 @@
 PunchId::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
+
   resources :user_activities, only: [:index, :show, :create]
+  resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :status, only: [:create]
   root to: "sessions#new"

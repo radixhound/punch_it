@@ -3,9 +3,10 @@ class UserPresenter
   delegate :username, to: :user
   attr_reader :user 
 
-  def self.present_each(users)
+  def self.present_each(users, current_user)
+    yield new(current_user)
     users.each do |user|
-      yield new(user)
+      yield new(user) unless user.id == current_user.id
     end
   end
 

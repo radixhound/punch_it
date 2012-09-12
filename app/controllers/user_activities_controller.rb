@@ -1,4 +1,5 @@
 class UserActivitiesController < ApplicationController
+  before_filter :require_login
   def index
     @status_update = StatusUpdateService.new(user: current_user )
     @users = User.where("id > 0").includes(:latest_activity)

@@ -6,7 +6,8 @@
   .field Status
   .field Description
   .field When
-- UserPresenter.present_each(@users) do |user|
+  
+- UserPresenter.present_each(@users, current_user) do |user|
   .user_activity.body
     .field.username= user.username
     .field.current_status= user.current_status
