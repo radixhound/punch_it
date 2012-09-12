@@ -1,14 +1,14 @@
-%h1 User Activity
-
 %section.post_update
   = render partial: 'form'
 
-.user_activity_head
+.user_activity.head
   .field Username
   .field Status
   .field Description
+  .field When
 - UserPresenter.present_each(@users) do |user|
-  .user_activity
+  .user_activity.body
     .field.username= user.username
-    .field.status= user.current_status
+    .field.current_status= user.current_status
     .field.description= user.status_description
+    .field.when=  user.time_ago

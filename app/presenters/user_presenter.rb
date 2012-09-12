@@ -1,4 +1,5 @@
 class UserPresenter
+  include ActionView::Helpers::DateHelper
   delegate :username, to: :user
   attr_reader :user 
 
@@ -20,5 +21,10 @@ class UserPresenter
   def status_description
     return "has not yet arrived" unless @user.latest_activity
     @user.latest_activity.description
+  end
+
+  def time_ago
+    return "never" unless @user.latest_activity
+    time_ago_in_words(@user.latest_activity.created_at) + " ago"
   end
 end

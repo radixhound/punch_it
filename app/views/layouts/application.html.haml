@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title PunchIT!
+    = stylesheet_link_tag    "application", :media => "all" 
+    = javascript_include_tag "application" 
+    = csrf_meta_tags 
+  %body
+    - if current_user
+      #login_header
+        = link_to "logout", logout_path
+    #container
+      #header
+        %h1 PunchIT!
+        %span.subheading Who's at their desk?
+     
+      #content.cf
+        = yield

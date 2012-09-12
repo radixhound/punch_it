@@ -1,10 +1,29 @@
-.user_activity, .user_activity_head{
+
+
+.post_update {
+  padding: 10px;
+  text-align: center;
+}
+
+.user_activity{
   display: table-row;
 }
-.user_activity_head {
+.user_activity.head {
   font-weight: bold;
 }
-.field{
-  display: table-cell;
-  padding: 5px;
+  .user_activity .field{
+    display: table-cell;
+    padding: 5px;
+  }
+
+  .user_activity .field.description {
+    width: 200px;
+  }
+
+.new_status_update_service {
+  display: table-row;
+}
+.new_status_update_service input[type=text]{
+  width: 300px;
+  padding: 8px;
 }

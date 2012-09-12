@@ -1,0 +1,10 @@
+@mixin curved($radius) {
+  moz-border-radius: $radius;
+  webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin top-curve($radius) {
+  moz-border-radius: $radius $radius 0 0;
+  webkit-border-radius: $radius $radius 0 0;
+  border-radius: $radius $radius 0 0;
+}

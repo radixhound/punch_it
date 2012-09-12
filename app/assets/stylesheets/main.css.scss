@@ -1,0 +1,64 @@
+@import 'mixins';
+$content-width: 500px;
+$header-width: 480px; /* oh yeah, padding.. */
+$colour: #350ECF;
+
+#login_header {
+  width: $header-width;
+  margin: auto;
+  text-align: right;
+  padding: 10px;
+}
+
+#container {
+  width: $content-width;
+  margin: auto;
+  background: #999;
+  min-height: 600px;
+  @include curved(10px);
+  clear: both;
+}
+
+#header {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #555;
+  background: $colour;
+  color: #DDD;
+  @include top-curve(10px) ;
+}
+  #header h1{
+    margin-bottom: 5px;
+  }
+
+#content {
+  padding: 10px 15px;
+}
+
+.field {
+  display: table-row;  
+}
+
+  .field label, .field input, .field p{
+    display: table-cell;
+    padding: 5px;
+  }
+
+  .field p.tip {
+    font-size: 13px;
+  }
+
+  .field p.section {
+    font-weight: bold;
+  }
+
+/*clearfix*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}

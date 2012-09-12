@@ -1,3 +1,5 @@
-= form_for @status_update, url: status_path(current_user) do |f|
+%p Update your status with "IN description" or "OUT description"
+
+= form_for @status_update, class: :status_update_form, url: status_path(current_user) do |f|
   = f.text_field :status
   = f.submit "update"

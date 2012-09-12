@@ -43,7 +43,6 @@ describe StatusUpdateService do
         let(:status) {"OUT: going for lunch!"}
         its(:activity) { should_not be_checked_in }
         it { subject.activity.description.should =~ /^going for lunch/}
-
       end
     end
   end
