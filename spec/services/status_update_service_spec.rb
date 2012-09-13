@@ -47,4 +47,27 @@ describe StatusUpdateService do
     end
   end
 
+  context "using the WITH keyword" do
+    let(:jonny){ FactoryGirl.create(:user, :username => 'jonny')}
+    let(:timmy){ FactoryGirl.create(:user, :username => 'timmy')}
+    let(:description) {"back from lunch"}
+    let(:status) {"IN #{description} WITH: timmy, jonny"}
+    before do
+      timmy && jonny #create the suckers sheesh
+    end
+    it "updates the status of timmy and jonny" do
+      subject
+      timmy.latest_activity.should be_checked_in
+      timmy.latest_activity.description.should =~ /#{description}/
+      jonny.latest_activity.should be_checked_in
+      jonny.latest_activity.description.should =~ /#{description}/
+    end
+
+    it "replaces the user name with the posting user" do
+      subject
+      timmy.latest_activity.description.should =~ /#{user.username}/
+      timmy.latest_activity.description.should_not =~ /#{timmy.username}/
+    end
+  end
+
 end

@@ -15,6 +15,7 @@ class StatusUpdateService < BasicService
   def update
     @activity = Activity.new(is_in: is_in?, description: parsed_description)
     user.activities << activity
+    update_others(with_clause)
     self
   end  
 
@@ -29,7 +30,23 @@ class StatusUpdateService < BasicService
   end
 
   def parsed_description
-    status.sub(/^(IN|OUT)\:?/,'').strip
+    @parsed_description ||= status.sub(/^(IN|OUT)\:?/,'').strip
+  end
+
+
+  def with_clause
+    status =~ /with:\s?(.*)$/i ? $1 : false
+  end
+
+  def update_others(userlist)
+    if userlist
+      usernames = userlist.split(',').map{|i| i.strip}
+      other_users = User.where(username: usernames)
+      other_users.each do |other_user|
+        other_user.activities << Activity.new(is_in: is_in?, 
+          description: parsed_description.sub(other_user.username, @user.username))
+      end
+    end
   end
 
 end
