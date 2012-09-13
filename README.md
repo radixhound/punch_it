@@ -26,4 +26,4 @@ Additionally, you can update the status of other members. This is a philosophica
 
 Overall my initial impression is that the main reason for something like this is for support requests or when you need to ask a question of someone in another department and need to know who is available. I am imagining an ideal end goal for this would be to integrate this with other communication tools and set up a kind of queue for getting help. For example, a sales person could click a button to talk to the next available support person, and that could launch a chat window, and then store the contents of the chat into a CRM system when it's all done.
 
-
+!(https://github.com/radixhound/punch_it/blob/master/screen_sample.png?raw=true)
