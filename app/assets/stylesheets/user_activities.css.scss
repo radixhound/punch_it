@@ -2,7 +2,6 @@
 
 .post_update {
   padding: 10px;
-  text-align: center;
 }
 
 .user_activity{
@@ -23,7 +22,22 @@
 .new_status_update_service {
   display: table-row;
 }
+.new_status_update_service input{
+  padding: 8px;
+}
 .new_status_update_service input[type=text]{
   width: 300px;
   padding: 8px;
+  display: table-cell;
+}
+.new_status_update_service input[type=submit]{
+  width: 95px;
+  margin-left: 10px;
+  font-size: 18px;
+ }
+.new_status_update_service span.info {
+  text-align: left;
+  display: block;
+  font-size: 13px;
+  padding-top: 5px;
 }

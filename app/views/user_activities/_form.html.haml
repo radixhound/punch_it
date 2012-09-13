@@ -1,5 +1,6 @@
-%p Update your status with "IN description" or "OUT description"
 
 = form_for @status_update, class: :status_update_form, url: status_path(current_user) do |f|
   = f.text_field :status
   = f.submit "update"
+
+  %span.info Update your status with "IN description" or "OUT description". You can also include others by adding "with: person1, person2" to the end.

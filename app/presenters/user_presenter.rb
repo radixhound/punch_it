@@ -24,7 +24,7 @@ class UserPresenter
     @user.latest_activity.description
   end
 
-  def time_ago
+  def status_time_ago
     return "never" unless @user.latest_activity
     time_ago_in_words(@user.latest_activity.created_at) + " ago"
   end

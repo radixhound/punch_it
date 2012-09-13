@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PunchId::Application.load_tasks
+PunchIt::Application.load_tasks
